@@ -5,11 +5,11 @@
 // - Updates label with remaining characters or clear error
 
 (function () {
-  const MAX = 160;
+  const MAX = 280;
 
-  const input = document.getElementById('tweet-input');
-  const btn   = document.getElementById('tweet-btn');
-  const label = document.getElementById('char-label');
+  const input = document.getElementById('composer-input');
+  const btn   = document.getElementById('post-btn');
+  const label = document.getElementById('char-count');
   const feed  = document.getElementById('tweets');
 
   // Updates remaining count + validation message
@@ -18,12 +18,10 @@
     const remaining = MAX - len;
 
     if (remaining >= 0) {
-      label.textContent = `${remaining} characters remaining`;
-      label.classList.remove('char-label--error');
+      label.textContent = remaining;
       btn.disabled = (input.value.trim().length === 0);
     } else {
-      label.textContent = `160-character limit exceeded by ${Math.abs(remaining)}`;
-      label.classList.add('char-label--error');
+      label.textContent = remaining;
       btn.disabled = true;
     }
   }
@@ -42,7 +40,7 @@
     const article = document.createElement('article');
     article.className = 'tweet';
     article.innerHTML = `
-      <div class="avatar avatar--placeholder" role="img" aria-label="Profile photo placeholder"></div>
+      <img class="avatar" src="https://i.pravatar.cc/48?img=10" alt="Your avatar" />
       <div class="tweet__main">
         <header class="tweet__header">
           <span class="tweet__author">You</span>
@@ -65,17 +63,16 @@
               <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
             </svg>
           </button>
-          <button class="icon-btn" type="button" aria-label="Link">
+          <button class="icon-btn" type="button" aria-label="Like">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07L10 4"></path>
-              <path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 1 0 7.07 7.07L14 20"></path>
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
             </svg>
           </button>
-          <button class="icon-btn" type="button" aria-label="Upload">
+          <button class="icon-btn" type="button" aria-label="Share">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 5 17 10"></polyline>
-              <line x1="12" y1="5" x2="12" y2="20"></line>
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+              <polyline points="16 6 12 2 8 6"></polyline>
+              <line x1="12" y1="2" x2="12" y2="15"></line>
             </svg>
           </button>
         </footer>
