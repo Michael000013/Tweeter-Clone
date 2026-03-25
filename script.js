@@ -5,7 +5,7 @@
 // - Updates label with remaining characters or clear error
 
 (function () {
-  const MAX = 280;
+  const MAX = 160;
 
   const input = document.getElementById('composer-input');
   const btn   = document.getElementById('post-btn');
@@ -18,10 +18,12 @@
     const remaining = MAX - len;
 
     if (remaining >= 0) {
-      label.textContent = remaining;
+      label.textContent = `${remaining} characters remaining`;
+      label.classList.remove('char-count--over');
       btn.disabled = (input.value.trim().length === 0);
     } else {
-      label.textContent = remaining;
+      label.textContent = `Exceeded by ${-remaining} characters (max ${MAX})`;
+      label.classList.add('char-count--over');
       btn.disabled = true;
     }
   }

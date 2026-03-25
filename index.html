@@ -78,11 +78,10 @@
       <section class="composer" aria-label="Compose Tweet">
         <img class="avatar" src="https://i.pravatar.cc/48?img=10" alt="Your avatar" />
         <div class="composer__body">
-          <textarea id="composer-input" class="composer__input" placeholder="What's happening?!" maxlength="280" aria-label="Tweet text"></textarea>
+          <textarea id="composer-input" class="composer__input" placeholder="What's happening?!" maxlength="160" aria-label="Tweet text"></textarea>
           <div class="composer__footer">
             <div class="composer__tools">
               <!-- Decorative icon buttons (non-functional) -->
-              <button class="icon-btn" type="button" aria-label="Add media">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" opacity="0.5">
                   <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
                 </svg>
@@ -104,8 +103,8 @@
               </button>
             </div>
             <div class="composer__actions">
-              <span id="char-count" class="char-count">280</span>
-              <button id="post-btn" class="btn btn--primary" type="button" disabled>Tweet</button>
+              <span id="char-count" class="char-count">160 characters remaining</span>
+              <button id="post-btn" class="btn btn--primary" type="button" disabled>tweeet</button>
             </div>
           </div>
         </div>

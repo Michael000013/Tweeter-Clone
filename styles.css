@@ -5,7 +5,7 @@
   --bg: #ffffff;
   --bg-muted: #f7f9fa;
   --border: #e6ecf0;
-  --text: #e2ebf3;
+  --text: #000000;
   --text-dim: #536471;
   --danger: #d93025;
 }
@@ -230,6 +230,10 @@ body{
 .char-count{
   font-size: 14px;
   color: var(--text-dim);
+}
+.char-count--over{
+  color: var(--danger);
+  font-weight: 700;
 }
 
 /* Buttons */
